@@ -34,3 +34,7 @@ The string is: Hello, world!
 
 Project Authors:
 Garrison Hanchette and Ashly Riggs.
+
+![113203697](https://user-images.githubusercontent.com/109107895/224785658-8ac3d928-8466-4e9e-9040-ec8420013600.jpg)
+![View recent photos](https://user-images.githubusercontent.com/109107895/224785890-303ed1cf-c091-4a72-ae3b-961645f8f695.jpg)
+
