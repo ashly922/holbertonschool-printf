@@ -1,0 +1,76 @@
+.Dd 03/13/2023
+.\" Manpage for printf.
+.SH NAME
+printf
+.SH SYNOPSIS
+#include <stdio.h>
+int printf(const char *format,...);
+.SH DESCRIPTION
+The printf() function prints formatted output to the standard output stream (stdout).
+
+The format string specifies how subsequent arguments (if any) are to be formatted for output. The format string can contain zero or more directives, which are special characters that cause a conversion to be made between the argument and its corresponding output representation.
+
+The syntax of the format string is as follows:
+
+% [flags] [width] [.precision] [length] conversion specifier
+
+The flags, width, precision and length are optional and the conversion specifier is required.
+
+The supported conversion specifiers are:
+
+%d or %i: print an integer in decimal form
+%o: print an integer in octal form
+%u: print an unsigned integer in decimal form
+%x or %X: print an integer in hexadecimal form, using lower or upper case letters
+%f: print a floating-point number in decimal form
+%e or %E: print a floating-point number in scientific notation, using lower or upper case letters for the exponent
+%g or %G: print a floating-point number in either decimal or scientific notation, depending on the magnitude of the number
+%c: print a single character
+%s: print a null-terminated string
+%p: print a pointer value in hexadecimal form
+The flags, width, precision and length are used to control the formatting of the output. Their meanings are as follows:
+
+Flags:
+-: left-align the output within the specified field width
+0: pad the output with zeros instead of spaces
++: always print a sign (+ or -) for signed numbers
+#: add a prefix (0, 0x, or 0X) to the output for certain conversions
+' ': if no sign is printed, print a space instead
+Width: specifies the minimum number of characters to print. If the output is shorter than this, it will be padded with spaces (or zeros, if the '0' flag is present).
+Precision: specifies the number of decimal places to print for floating-point numbers, or the maximum number of characters to print for strings.
+Length:
+h: indicates that the corresponding argument is a short int or unsigned short int
+l: indicates that the corresponding argument is a long int or unsigned long int
+L: indicates that the corresponding argument is a long double
+
+.SH RETURN VALUE
+The printf() function returns the number of characters printed, or a negative value if an error occurs.
+
+.SH EXAMPLES
+The following examples demonstrate the use of the printf() function:
+
+Print an integer in decimal form:
+.B
+printf("The value of x is %d\n", x);
+.E
+
+Print a floating-point number in scientific notation:
+.B
+printf("The value of y is %e\n", y);
+.E
+
+Print a string:
+.B
+printf("Hello, world!\n");
+.E
+
+.SH EXIT VALUES
+EOF (which is defined as a negative integer constant) if an output error occurs.
+A negative value if an encoding error occurs during conversion of a wide character to a multibyte sequence.
+A negative value if an invalid format string is passed as an argument.
+
+.SH NOTES
+The printf() function is part of the C standard library and is declared in the stdio.h header file.
+
+.SH AUTHORS
+Authors: Garrison Hanchette and Ashly Riggs
